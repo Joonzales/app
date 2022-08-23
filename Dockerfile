@@ -31,7 +31,7 @@ RUN cd wordpress/
 RUN wget https://ko.wordpress.org/latest-ko_KR.tar.gz
 RUN tar zxvf latest-ko_KR.tar.gz
 RUN cp -a wordpress/* /var/www/localhost/htdocs/
-RUN chown apache.apche /var/www/localhost/htdocs/*
+RUN chown apache.apache /var/www/localhost/htdocs/*
 RUN sed -i 's/DirectoryIndex index.html/DirectoryIndex index.php/g' /etc/apache2/httpd.conf
 RUN cp /var/www/localhost/htdocs/wp-config-sample.php /var/www/localhost/htdocs/wp-config.php
 RUN sed -i 's/database_name_here/wordpress/g' /var/www/localhost/htdocs/wp-config.php
