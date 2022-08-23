@@ -21,7 +21,7 @@ RUN apk --no-cache --update \
     php8-openssl \ 
     php8-pdo_mysql \ 
     php8-pdo_pgsql \
-    php8-sqlite \
+    php8-pdo_sqlite \
     php8-phar \
     php8-session \
     php8-xml
