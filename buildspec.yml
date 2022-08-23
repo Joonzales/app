@@ -3,7 +3,7 @@ version: 0.2
 env:
     variables:
         AWS_REGION_NAME: ap-northeast-2
-        ECR_REPOSITORY_NAME: Project
+        ECR_REPOSITORY_NAME: projectrepository
         DOCKER_BUILDKIT: "1"
     
 phases:
