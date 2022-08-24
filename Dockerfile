@@ -37,7 +37,7 @@ RUN cp /var/www/localhost/htdocs/wp-config-sample.php /var/www/localhost/htdocs/
 RUN sed -i 's/database_name_here/wordpress/g' /var/www/localhost/htdocs/wp-config.php
 RUN sed -i 's/username_here/root/g' /var/www/localhost/htdocs/wp-config.php
 RUN sed -i 's/password_here/It12345!/g' /var/www/localhost/htdocs/wp-config.php
-RUN sed -i 's/localhost_here/db/g' /var/www/localhost/htdocs/wp-config.php
+RUN sed -i 's/localhost_here/wordpress.cupr0nzbogkz.ap-northeast-2.rds.amazonaws.com/g' /var/www/localhost/htdocs/wp-config.php
 
 CMD /usr/sbin/httpd -D FOREGROUND
 
