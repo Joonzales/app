@@ -1,6 +1,10 @@
 FROM centos:7
 
-RUN yum install -y httpd wget
+RUN yum install -y httpd wget php epel-release yum-utils
+RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+RUN yum-config-manager --enable remi-php73
+RUN yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
 RUN mkdir wordpress
 RUN cd wordpress/
 RUN wget https://ko.wordpress.org/latest-ko_KR.tar.gz
