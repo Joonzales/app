@@ -1,6 +1,6 @@
 FROM centos:7
 
-RUN yum install -y httpd
+RUN yum install -y httpd wget
 RUN mkdir wordpress
 RUN cd wordpress/
 RUN wget https://ko.wordpress.org/latest-ko_KR.tar.gz
