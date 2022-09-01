@@ -26,6 +26,9 @@ RUN apk --no-cache --update \
     php8-session \
     php8-xml
 
+ENV APACHE_RUN_USER apache
+ENV APACHE_RUN_GROUP apache
+
 RUN mkdir wordpress
 RUN cd wordpress/
 RUN wget https://ko.wordpress.org/latest-ko_KR.tar.gz
