@@ -19,6 +19,7 @@ RUN sed -i 's/database_name_here/wordpress/g' /var/www/html/wp-config.php
 RUN sed -i 's/username_here/root/g' /var/www/html/wp-config.php
 RUN sed -i 's/password_here/It12345!/g' /var/www/html/wp-config.php
 RUN sed -i 's/localhost/wordpress.cupr0nzbogkz.ap-northeast-2.rds.amazonaws.com/g' /var/www/html/wp-config.php
+RUN setenforce 0
 
 CMD /usr/sbin/httpd -D FOREGROUND
 
