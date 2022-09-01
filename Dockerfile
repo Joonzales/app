@@ -18,6 +18,14 @@ RUN sed -i 's/username_here/root/g' /var/www/html/wp-config.php
 RUN sed -i 's/password_here/It12345!/g' /var/www/html/wp-config.php
 RUN sed -i 's/localhost/wordpress.cupr0nzbogkz.ap-northeast-2.rds.amazonaws.com/g' /var/www/html/wp-config.php
 
+RUN mkdir -p /var/lib/amazon
+RUN chmod 777 /var/lib/amazon
+VOLUME /var/lib/amazon
+
+RUN mkdir -p /var/log/amazon
+RUN chmod 777 /var/log/amazon
+VOLUME /var/log/amazon
+
 CMD /usr/sbin/httpd -D FOREGROUND
 
 EXPOSE 80
