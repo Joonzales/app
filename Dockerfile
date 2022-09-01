@@ -5,6 +5,7 @@ RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 RUN yum install -y http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 RUN yum-config-manager --enable remi-php73
 RUN yum install -y php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd
+
 RUN mkdir wordpress
 RUN cd wordpress/
 RUN wget https://ko.wordpress.org/latest-ko_KR.tar.gz
@@ -17,7 +18,6 @@ RUN sed -i 's/database_name_here/wordpress/g' /var/www/html/wp-config.php
 RUN sed -i 's/username_here/root/g' /var/www/html/wp-config.php
 RUN sed -i 's/password_here/It12345!/g' /var/www/html/wp-config.php
 RUN sed -i 's/localhost/wordpress.cupr0nzbogkz.ap-northeast-2.rds.amazonaws.com/g' /var/www/html/wp-config.php
-
 
 CMD /usr/sbin/httpd -D FOREGROUND
 
