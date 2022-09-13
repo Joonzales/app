@@ -152,16 +152,5 @@
   "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
-  "proxyConfiguration": null,
-  "volumes": [
-    {
-      "fsxWindowsFileServerVolumeConfiguration": null,
-      "efsVolumeConfiguration": null,
-      "name": "django-app",
-      "host": null,
-      "dockerVolumeConfiguration": {
-        "autoprovision" : true
-      }
-    }
-  ]
+  "proxyConfiguration": null
 }
