@@ -14,7 +14,7 @@ phases:
     pre_build:
         commands:
             - AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query 'Account' --output text)
-            - aws ecr --region ap-northeast-2 get-login-password | docker login --username AWS --password-stdin https://${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/Project
+            - aws ecr --region ap-northeast-2 get-login-password | docker login --username AWS --password-stdin https://${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-2.amazonaws.com/${ECR_REPOSITORY_NAME}
             - REPOSITORY_URI=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION_NAME}.amazonaws.com/${ECR_REPOSITORY_NAME}
 
 
