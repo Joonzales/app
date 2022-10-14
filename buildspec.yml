@@ -25,7 +25,8 @@ phases:
         commands:
             - echo docker image push ${REPOSITORY_URI}:v${CODEBUILD_BUILD_NUMBER}
             - docker image push ${REPOSITORY_URI}:v${CODEBUILD_BUILD_NUMBER}
-            - printf '{"name":"%s","ImageURI":"%s"}' $ECR_REPOSITORY_NAME $REPOSITORY_URI:v${CODEBUILD_BUILD_NUMBER} > imageDetail.json   
+            #- printf '{"name":"%s","ImageURI":"%s"}' $ECR_REPOSITORY_NAME $REPOSITORY_URI:v${CODEBUILD_BUILD_NUMBER} > imageDetail.json   
+            - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:v${CODEBUILD_BUILD_NUMBER} > imageDetail.json
 
 artifacts:
     files:
